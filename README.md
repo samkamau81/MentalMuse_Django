@@ -1,4 +1,4 @@
-# Django_Tutorial
+# Django_Tutorial - MentalMuse App
 Creating the Django Version of my MentalMuse App.
 previous version was developed with Streamlit
 Tech Stack:
@@ -52,6 +52,40 @@ reinventing an overlay (as SOAP or XML-RPC do, for example):
 ### Chapter 2:Authentification and Authorization using JWTs
 Models, serializers, and viewsets are used create APIs that can receive HTTP requests as well as return a response. 
 This will be done by building an authentication and authorization system using JSON Web Tokens (JWTs) to allow users to create an account, log in, and log out.
+
+
+According to RFC 7519, a JWT is a JSON object defined as a safe way of transmitting information 
+between two parties. Information transmitted by JWT is digitally signed so it can be verified and trusted.
+A JWT contains three parts—a header (x), a payload (y), and a signature (z)—that are separated 
+by a dot:
+xxxxx.yyyyy.zzzzz
+- Header - The header of the JWT consists of two parts: the type of token and the signing algorithm being 
+used. The signing algorithm is used to ensure that the message is authentic and not altered.
+- Payload - The payload is the second part that contains the claims.According to the official JWT 
+documentation (https://jwt.io/introduction), claims are statements about an 
+entity (typically, the user) and additional data.
+- Signature - The signature of a JWT is the encoded header, the encoded payload plus a secret, and an 
+algorithm specified in the header, all of them combined and signed
+
+Each time a user successfully logs in, a JWT is created and returned. The JWT will be represented as credentials used to access protected resources. The fact that it’s possible to store data in a JWT makes it vulnerable. That’s why you should specify an expiration time when creating a JWT.
+JWTs used to access resources (access tokens) should have a short lifespan. This means that after the JWT has expired, 
+the user has to log in again and again – and no user wants the login page to appear every 5 minutes.
+That’s where a refresh token is useful. It’ll contain the essential information needed to verify the user 
+and generate a new access token
+-----
+DJANGO DATABASE
+Django models provide object-relational mapping (ORM) to the underlying database. ORM is a 
+tool that simplifies database programming by providing a simple mapping between the object and 
+the database. Then, you don’t necessarily need to know the database structure or write complex SQL 
+queries to manipulate or retrieve data from the database.
+Writing models with Django comes with several advantages:
+- Simplicity: Writing queries in Python may not be as clear as writing in SQL, but it’s less error prone and more efficient, as you don’t have to control which type of database you are working with before trying to understand the code.
+- Consistency: SQL is inconsistent across different databases. Working with Django models creates an abstraction and helps you focus on the most important tasks.
+- Tracking: It’s even easier to track database design changes working with Django models. It’s done by reading migration files written in Python. We’ll discuss this more in the next chapter
+
+Notice that you also have access to model managers. Django Manager is a class that behaves as an interface through which Django models interact with databases. Every Django model, by default, inherits the models.Manager class that comes with the necessary methods to make Create, Read, Update and Delete (CRUD) operations on the table in the database.
+
+
 -------
 ### Chapter 3:Social Media Post Management
 --------
