@@ -45,15 +45,17 @@ reinventing an overlay (as SOAP or XML-RPC do, for example):
 - Rule 5: A parameter is an authentication token
 
 
-![Alt text](image-1.png)
 
+
+![Alt text](image.png)
+-----------
 ### Chapter 2:Authentification and Authorization using JWTs
-
-
-Chapter 3:Social Media Post Management
-
-
-Chapter 4:Adding Comments to Social Media Posts
+Models, serializers, and viewsets are used create APIs that can receive HTTP requests as well as return a response. 
+This will be done by building an authentication and authorization system using JSON Web Tokens (JWTs) to allow users to create an account, log in, and log out.
+-------
+### Chapter 3:Social Media Post Management
+--------
+### Chapter 4:Adding Comments to Social Media Posts
 
 
 Chapter 5:Testing the REST Api
